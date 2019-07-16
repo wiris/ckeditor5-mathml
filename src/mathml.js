@@ -55,17 +55,19 @@ export default class MathML extends Plugin {
 
             }
 
-        }
+            for ( const attribute of mathmlAttributes ) {
+                editor.conversion.attributeToAttribute( {
+                    model: {
+                        key: attribute,
+                        name: modelName,
+                    },
+                    view: {
+                        key: attribute,
+                        name: realName,
+                    }
+                } );
+            }
 
-        // Apparently it is needed to register every attribute to be converted.
-        // FIXME this adds global converters for attributes on *any* element.
-        // Ideally, these should work on a per-element basis, but adding all
-        // MathML attributes to all MathML elements is too costly.
-        for ( const attribute of mathmlAttributes ) {
-            editor.conversion.attributeToAttribute( {
-                model: attribute,
-                view: attribute,
-            } );
         }
 
         // Allow text in some elements
