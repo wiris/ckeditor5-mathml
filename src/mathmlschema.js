@@ -25,9 +25,8 @@ let schema = [
         definition: {
             allowWhere: [ '$block', '$inline', '$text' ],
             allowAttributes: attributes,
-            isBlock: false,
-            isLimit: true,
             isObject: true,
+            isInline: true,
         },
         needsCasting: true,
         allowsText: true,
