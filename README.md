@@ -22,3 +22,7 @@ This package extends the CKEditor 5 model to allow working with the MathML stand
         .create( editorElement, {
             plugins: [ ..., MathML, ... ],
    ```
+
+# WARNING
+
+This project is no longer useful as the integration with CKEditor5 with the mathtype plugin supports mathml itself, so the project will be archived soon.
